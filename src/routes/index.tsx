@@ -1,26 +1,42 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { StarField } from "@/components/StarField";
+import { Nav } from "@/components/Nav";
+import { Hero } from "@/components/Hero";
+import { ZodiacWheel } from "@/components/ZodiacWheel";
+import { DailyHoroscope } from "@/components/DailyHoroscope";
+import { Compatibility } from "@/components/Compatibility";
+import { CosmicCards } from "@/components/CosmicCards";
+import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Meowroscope — Discover your cat's cosmic destiny" },
+      {
+        name: "description",
+        content:
+          "Magical astrology for cats. Discover zodiac readings, daily horoscopes, compatibility, and collectible cosmic cat cards.",
+      },
+      { property: "og:title", content: "Meowroscope — Cosmic destiny for cats" },
+      { property: "og:description", content: "Magical astrology readings for your fluffy familiar." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="relative min-h-screen">
+      <StarField />
+      <Nav />
+      <main>
+        <Hero />
+        <ZodiacWheel />
+        <DailyHoroscope />
+        <Compatibility />
+        <CosmicCards />
+      </main>
+      <Footer />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
