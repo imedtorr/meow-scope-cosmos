@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ZODIAC_SIGNS } from "@/lib/zodiac";
-import { useMeowSound } from "@/hooks/useMeowSound";
+import { usePurrSound } from "@/hooks/usePurrSound";
 
 export function ZodiacWheel() {
   const [hovered, setHovered] = useState<number | null>(null);
   const active = hovered ?? 0;
   const sign = ZODIAC_SIGNS[active];
-  const { play } = useMeowSound();
+  const { play, stop } = usePurrSound();
 
   return (
     <section id="zodiac" className="relative py-32 px-4">
@@ -39,12 +39,18 @@ export function ZodiacWheel() {
                   setHovered(i);
                   play();
                 }}
-                onHoverEnd={() => setHovered(null)}
+                onHoverEnd={() => {
+                  setHovered(null);
+                  stop();
+                }}
                 onFocus={() => {
                   setHovered(i);
                   play();
                 }}
-                onBlur={() => setHovered(null)}
+                onBlur={() => {
+                  setHovered(null);
+                  stop();
+                }}
                 whileHover={{ scale: 1.3 }}
                 className="absolute -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full glass-strong flex items-center justify-center text-2xl cursor-pointer"
                 style={{
