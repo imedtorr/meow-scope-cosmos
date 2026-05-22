@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ZODIAC_SIGNS } from "@/lib/zodiac";
+import { usePurrSound } from "@/hooks/usePurrSound";
 
 export function ZodiacWheel() {
   const [hovered, setHovered] = useState<number | null>(null);
   const active = hovered ?? 0;
   const sign = ZODIAC_SIGNS[active];
+  const { play, stop } = usePurrSound();
 
   return (
     <section id="zodiac" className="relative py-32 px-4">
