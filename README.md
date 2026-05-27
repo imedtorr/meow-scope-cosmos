@@ -10,7 +10,7 @@
 
 | Куда | Ссылка |
 |------|--------|
-| **Репозиторий** | [github.com/imedtorr/meow-scope-cosmos-748e588b](https://github.com/imedtorr/meow-scope-cosmos-748e588b) |
+| **Репозиторий** | [github.com/imedtorr/meow-scope-cosmos](https://github.com/imedtorr/meow-scope-cosmos) |
 | **Локально** | после запуска → [http://localhost:8080](http://localhost:8080) |
 
 > Если проект опубликован через Lovable / Cloudflare — открой ссылку на деплой из панели проекта. Локальная версия всегда доступна по инструкции ниже.
@@ -23,8 +23,8 @@
 
 ```bash
 # 1. Клонировать репозиторий
-git clone git@github.com:imedtorr/meow-scope-cosmos-748e588b.git
-cd meow-scope-cosmos-748e588b
+git clone git@github.com:imedtorr/meow-scope-cosmos.git
+cd meow-scope-cosmos
 
 # 2. Установить зависимости
 npm install
